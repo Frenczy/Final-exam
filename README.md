@@ -8,7 +8,7 @@
 ---
 
 **1. agilis felhasználói történet:**
-> _A főoldal egy üdvözlő képernyő a Vállalatirányítási rendszer bemutatkozásával, rövid leírásával, illetve kártyás elrendezésben bemutatásra kerülnek a főbb aloldalak (vásárlók, számlák, szolgáltatások, rendelések)_
+> _A főoldal egy üdvözlő képernyő a Vállalatirányítási rendszer bemutatkozásával, rövid leírásával, illetve kártyás elrendezésben bemutatásra kerülnek a főbb aloldalak (vásárlók, számlák, szolgáltatások, rendelések)._
 
 **Elfogadási kritérium:**  
 
