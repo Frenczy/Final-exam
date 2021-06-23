@@ -12,7 +12,7 @@
 
 **Elfogadási kritérium:**  
 
-Egy mobiloptimalizált, reszponzív felületen a Vállalatirányítási rendszer főoldalára érkezünk. A főoldalon a vállalatirányítási rendszer számlázási moduljának rövid leírása található, illetve navigációs sáv és dashboard is szerepel az egyes aloldalak elérésének érdekében.
+Egy mobiloptimalizált, reszponzív felületen a Vállalatirányítási rendszer főoldalára érkezünk. A főoldalon a vállalatirányítási rendszer számlázási moduljának rövid leírása található, illetve közvetlenül innen eljuthatunk az egyes aloldalakra is. A felhasználói felület letisztult, intuitív és könnyen érthető.
 
 ---
 
