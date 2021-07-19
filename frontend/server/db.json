@@ -1,0 +1,23 @@
+{
+    "users": [
+        {"_id": "aaaaaaaaaaaaaa",
+        "firstname":"Joe",
+        "lastname":"Firpo",
+        "email":"joe@gmail.com",
+        "address":"LA",
+        "active":true}
+    ],
+    "products": [
+        {"_id": "bbbbbbbbbbbbbb",
+        "name":"Joe",
+        "description":"product",
+        "price":100,
+        "active":true}
+    ],
+    "orders": [
+        {"_id": "afsfsefew",
+        "customer":"aaaaaaaaaaaaaa",
+        "products":["bbbbbbbbbbbbbb"],
+        "note":"note"}
+    ]
+}
