@@ -1,0 +1,120 @@
+<div class="container-fluid p-4">
+    <div class="row">
+      <div class="col-xl-4 col-md-12">
+        <div class=" d-flex justify-content-center">
+          <button [routerLink]="['/categories/0']" class="btn btn-warning">Add new
+            category</button>
+        </div>
+      </div>
+      <div class="col-xl-4 col-md-12">
+        <select [(ngModel)]="filterKey" class="form-control select-css mt-1 ">
+          <option *ngFor="let key of filterKeys" [value]="key">
+            {{ key }}
+          </option>
+        </select>
+      </div>
+      <div class="col-xl-3 col-md-12">
+        <form class=" my-2 my-lg-0 py-2 d-flex justify-content-center">
+          <input (keyup)="searchEvent($event)" class="search-input form-control mr-sm-2 pl-2" type="text" placeholder="Search">
+          <button class="btn btn-search my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="form-inline mt-4 border-0">
+        <div class="col-12">
+          <div class="row mt-4">
+            <div class="col-12">
+              <nav class="d-flex justify-content-center">
+                <ul class="pagination text-center">
+                  <li class="page-item">
+                    <a (click)="onStepPage($event, -1)" class="page-link" href="#">«</a>
+                  </li>
+                  <li *ngFor="let btn of paginator" class="page-item" [class.active]="btn.page === currentPage">
+                    <a (click)="onPaginate($event, btn)" class="page-link" href="#">
+                      {{ btn.page }}
+                    </a>
+                  </li>
+                  <li class="page-item">
+                    <a (click)="onStepPage($event, +1)" class="page-link" href="#">»</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+  
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header card-header-warning">
+                <h4 class="card-title">List of Categories</h4>
+              </div>
+              <div class="card-content table-responsive">
+                <table class="table mx-auto w-auto">
+                  <thead class="text-warning">
+                    <tr>
+                      <th (click)="onColumnSelect(col.key)" *ngFor="let col of cols">
+                        <i *ngIf="columnKey === col.key && (col.key === 'id' || col.key === 'address' || col.key === 'catID' || col.key === 'price') && sortDir === 1"
+                          class="fa fa-sort-numeric-asc"></i>
+                        <i *ngIf="columnKey === col.key && (col.key === 'id' || col.key === 'address' || col.key === 'catID' || col.key === 'price') && sortDir === -1"
+                          class="fa fa-sort-numeric-desc"></i>
+                        <i *ngIf="columnKey === col.key && (col.key === 'name' || col.key === 'type' || col.key === 'description' || col.key === 'featured' || col.key === 'active') && sortDir === 1"
+                          class="fa fa-sort-alpha-asc"></i>
+                        <i *ngIf="columnKey === col.key && (col.key === 'name' || col.key === 'type' || col.key === 'description' || col.key === 'featured' || col.key === 'active') && sortDir === -1"
+                          class="fa fa-sort-alpha-desc"></i>
+                        {{ col.title }}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      *ngFor="let category of categories$ | async | filter: filterKey:phrase:categoryProperties | sorter:columnKey:sortDir | slice:pageSliceStart:pageSliceEnd ">
+                      <td class=" text-warning">{{category.id}}</td>
+                      <td>{{category.name}}</td>
+                      <td>{{category.description}}</td>
+                      <td>
+                        <div class="btn-group">
+                          <button [routerLink]="[category._id]" class="btn btn-info px-3"><i
+                              class="fa fa-edit"></i></button>
+                          <button (click)="onDelete(category)" (click)="showHtmlToasterDelete()"
+                            class="btn btn-danger px-3"><i class="fa fa-trash"></i></button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-12">
+              <nav class="d-flex justify-content-center">
+                <ul class="pagination text-center">
+                  <li class="page-item">
+                    <a (click)="onStepPage($event, -1)" class="page-link" href="#">«</a>
+                  </li>
+                  <li *ngFor="let btn of paginator" class="page-item" [class.active]="btn.page === currentPage">
+                    <a (click)="onPaginate($event, btn)" class="page-link" href="#">
+                      {{ btn.page }}
+                    </a>
+                  </li>
+                  <li class="page-item">
+                    <a (click)="onStepPage($event, +1)" class="page-link" href="#">»</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+  
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header card-header-warning">
+                <h4 class="card-title">Statistics</h4>
+              </div>
+              <div class="card-body">
+                <div class="text-center mb-2" *ngIf="categories$ | async; let list">
+                  Number of categories: {{list.length}}
+                </div>
+              </div>
+            </div>
+          </div>

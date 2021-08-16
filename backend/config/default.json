@@ -1,0 +1,7 @@
+{
+    "database": {
+        "username": "NodeUser2",
+        "password": "NodeUser2",
+        "host": "mongodb+srv://NodeUser2:NodeUser2@cluster0.tm13l.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    }
+}

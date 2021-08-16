@@ -1,0 +1,52 @@
+@use '../../../assets/modules/colors' as *;
+
+.error-message {
+  font-style: italic;
+  font-size: 0.8em;
+  color: $error;
+  margin-top: 1rem;
+  animation: fadeIn ease 2s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.fa-refresh {
+  animation: rotate 1s infinite;
+}
+
+.form-control {
+  color: rgb(114, 114, 114);
+  &:focus {
+      border-radius: 5px;
+      box-shadow: inset 0 -2px 0 rgb(211, 211, 211);
+      color: rgb(92, 92, 92);
+  }
+  &:hover {
+      box-shadow: inset 0 -2px 0 rgb(211, 211, 211);
+  }
+}
+.found {
+  color:rgb(1, 133, 1)
+}
+.not-found {
+  color:rgb(197, 0, 0)
+}

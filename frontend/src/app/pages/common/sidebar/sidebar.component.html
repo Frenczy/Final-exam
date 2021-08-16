@@ -1,0 +1,54 @@
+<div *ngIf="(user$ |async)" class="sidebar" data-color="purple" data-background-color="white">
+
+  <div class="logo text-center">
+    Vállalatirányítási rendszer
+    <br><br>
+    <small>Számlázási modul</small>
+  </div>
+  <div class="sidebar-wrapper">
+    <ul class="nav">
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link" routerLink="">
+          <i class="material-icons">dashboard</i>
+          <p>Dashboard</p>
+        </a>
+      </li>
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link" routerLink="/orders">
+          <i class="material-icons">shopping_cart</i>
+          <p>Orders</p>
+        </a>
+      </li>
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link" routerLink="/bills">
+          <i class="material-icons">payment</i>
+          <p>Invoices</p>
+        </a>
+      </li>
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link" routerLink="/customers">
+          <i class="material-icons">person</i>
+          <p>Customers</p>
+        </a>
+      </li>
+      <li id="nav-item" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link" routerLink="/products">
+          <i class="material-icons">receipt</i>
+          <p>Services</p>
+        </a>
+      </li>
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link" routerLink="/categories">
+          <i class="material-icons">assignment</i>
+          <p>Categories</p>
+        </a>
+      </li>
+      <li class="nav-item d-lg-none"  (click)="onLogout()" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link">
+          <i class="material-icons">logout</i>
+          <p>Logout</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

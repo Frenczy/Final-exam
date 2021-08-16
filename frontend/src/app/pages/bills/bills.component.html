@@ -1,0 +1,127 @@
+<div class="container-fluid p-4">
+  <div class="row">
+    <div class="col-xl-4 col-md-12">
+      <div class=" d-flex justify-content-center">
+        <button [routerLink]="['/bills/0']" class="btn btn-info">Add new
+          invoice</button>
+      </div>
+    </div>
+    <div class="col-xl-4 col-md-12">
+      <select [(ngModel)]="filterKey" class="form-control select-css mt-1 ">
+        <option *ngFor="let key of filterKeys" [value]="key">
+          {{ key }}
+        </option>
+      </select>
+    </div>
+    <div class="col-xl-3 col-md-12">
+      <form class=" my-2 my-lg-0 py-2 d-flex justify-content-center">
+        <input (keyup)="searchEvent($event)" class="search-input form-control mr-sm-2 pl-2" type="text"
+          placeholder="Search">
+        <button class="btn btn-search my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <div class="form-inline mt-4 border-0">
+      <div class="col-12">
+        <div class="row mt-4">
+          <div class="col-12">
+            <nav class="d-flex justify-content-center">
+              <ul class="pagination text-center">
+                <li class="page-item">
+                  <a (click)="onStepPage($event, -1)" class="page-link" href="#">«</a>
+                </li>
+                <li *ngFor="let btn of paginator" class="page-item" [class.active]="btn.page === currentPage">
+                  <a (click)="onPaginate($event, btn)" class="page-link" href="#">{{ btn.page }} </a>
+                </li>
+                <li class="page-item">
+                  <a (click)="onStepPage($event, +1)" class="page-link" href="#">»</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header card-header-info" >
+              <h4 class="card-title">List of bills</h4>
+            </div>
+            <div class="card-content table-responsive">
+              <table class="table mx-auto w-auto">
+                <thead class="text-info">
+                  <tr>
+                    <th (click)="onColumnSelect(col.key)" *ngFor="let col of cols">
+                      <i *ngIf="columnKey === col.key && (col.key === 'id' || col.key === 'orderID' || col.key === 'amount') && sortDir === 1"
+                        class="fa fa-sort-numeric-asc"></i>
+                      <i *ngIf="columnKey === col.key && (col.key === 'id' || col.key === 'orderID' || col.key === 'amount') && sortDir === -1"
+                        class="fa fa-sort-numeric-desc"></i>
+                      <i *ngIf="columnKey === col.key && (col.key === 'status') && sortDir === 1"
+                        class="fa fa-sort-alpha-asc"></i>
+                      <i *ngIf="columnKey === col.key && (col.key === 'status') && sortDir === -1"
+                        class="fa fa-sort-alpha-desc"></i>
+                      {{ col.title }}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    *ngFor="let bill of bills$ | async | filter: filterKey:phrase:billsProperties | sorter:columnKey:sortDir | slice:pageSliceStart:pageSliceEnd">
+                    <td class=" text-primary">Inv-{{bill.id}}</td>
+                    <td>{{bill.orderID}}</td>
+                    <td>${{bill.amount}} </td>
+                    <td>{{bill.status}} </td>
+                    <td>
+                      <div class="btn-group">
+                        <button [routerLink]="[bill._id]" class="btn btn-info px-3"><i class="fa fa-edit"></i></button>
+                        <button (click)="onDelete(bill)" (click)="showHtmlToasterDelete()"
+                          class="btn btn-danger px-3"><i class="fa fa-trash"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <nav class="d-flex justify-content-center">
+              <ul class="pagination text-center">
+                <li class="page-item">
+                  <a (click)="onStepPage($event, -1)" class="page-link" href="#">«</a>
+                </li>
+                <li *ngFor="let btn of paginator" class="page-item" [class.active]="btn.page === currentPage">
+                  <a (click)="onPaginate($event, btn)" class="page-link" href="#">
+                    {{ btn.page }}
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a (click)="onStepPage($event, +1)" class="page-link" href="#">»</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header card-header-info">
+              <h4 class="card-title">Statistics</h4>
+            </div>
+            <div class="card-body">
+              <div class="text-center mb-2" *ngIf="bills$ | async; let list">
+                Number of bills: {{list.length}}
+              </div>
+              <div class="text-center mb-2">
+                Amount of unpaid bills: ${{ bills$ | async | filter:'status':'new' | sum: 'amount' }}
+              </div>
+              <div class="text-center">
+                Amount of paid bills: ${{ bills$ | async | filter:'status':'paid' | sum: 'amount' }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

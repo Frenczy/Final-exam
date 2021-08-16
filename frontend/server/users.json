@@ -1,0 +1,28 @@
+[
+    {
+      "id": "1",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "johndoe@gmail.com",
+      "address": "1111 Budapest, Nagy utca 3.",
+      "active": true,
+      "password": "$2a$10$5uzHpW9Stw9DXea90Cxt8uasHeVFfy9OpRNtF5c5nr3RxgGzOchNa"
+    },
+    {
+      "id": "2",
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "email": "admin@gmail.com",
+      "address": "1234 Budapest, Király utca 5.",
+      "active": true,
+      "password": "$2a$10$5uzHpW9Stw9DXea90Cxt8uasHeVFfy9OpRNtF5c5nr3RxgGzOchNa"
+    },
+    {
+      "id": "3",
+      "firstName": "Joe",
+      "lastName": "Doe",
+      "email": "user@gmail.com",
+      "address": "1122 Budapest, Fő utca 7.",
+      "active": true,
+      "password": "$2a$10$5uzHpW9Stw9DXea90Cxt8uasHeVFfy9OpRNtF5c5nr3RxgGzOchNa"
+    }]

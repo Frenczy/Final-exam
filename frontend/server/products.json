@@ -1,0 +1,614 @@
+[
+    {
+      "id": 1,
+      "name": "Accounting Services ( < 20 invoices / month) ",
+      "catID": 1,
+      "description": "Posting all incoming / outgoing invoices, cash management",
+      "price": 300,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 2,
+      "name": "Auditing Services ( Revenue < 10,000 EUR / year) ",
+      "catID": 2,
+      "description": "Compiling & Auditing Year-end report",
+      "price": 400,
+      "UOM": "Year",
+      "active": true
+    },
+    {
+      "id": 3,
+      "name": "Petty-cash management",
+      "catID": 1,
+      "description": "Recording incoming / outgoing cash movements",
+      "price": 100,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 4,
+      "name": "VAT return submission",
+      "catID": 3,
+      "description": "Monthly VAT return submission to Tax Authorities",
+      "price": 120,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 5,
+      "name": "Corporate Income Tax return submission",
+      "catID": 3,
+      "description": "CIT calculation &  submission to Tax Authorities",
+      "price": 500,
+      "UOM": "Quarter",
+      "active": true
+    },
+    {
+      "id": 6,
+      "name": "Tax self-revision",
+      "catID": 3,
+      "description": "Adjusting previous periods of Tax submissions",
+      "price": 200,
+      "UOM": "Each",
+      "active": true
+    },
+    {
+      "id": 7,
+      "name": "Taxes to local governments",
+      "catID": 3,
+      "description": "HIPA and other tax liabilites to local authorities",
+      "price": 150,
+      "UOM": "Each",
+      "active": true
+    },
+    {
+      "id": 8,
+      "name": "Tax advisory",
+      "catID": 3,
+      "description": "Tax planning & analysis, optimising payable liabilities",
+      "price": 300,
+      "UOM": "Each",
+      "active": true
+    },
+    {
+      "id": 9,
+      "name": "Financial advisory",
+      "catID": 1,
+      "description": "Financial planning & analysis, budget, cash forecast",
+      "price": 300,
+      "UOM": "Each",
+      "active": false
+    },
+    {
+      "id": 10,
+      "name": "Project Management",
+      "catID": 5,
+      "description": "Applying for EU funds & related services",
+      "price": 300,
+      "UOM": "Each",
+      "active": true
+    },
+    {
+      "id": 11,
+      "name": "Legal services",
+      "catID": 4,
+      "description": "Establishing new companies, representation at court",
+      "price": 300,
+      "UOM": "Each",
+      "active": true
+    },
+    {
+      "id": 12,
+      "name": "Legal advisory",
+      "catID": 4,
+      "description": "Legal planning & advisory",
+      "price": 300,
+      "UOM": "Each",
+      "active": true
+    },
+    {
+      "id": 13,
+      "name": "Accounting Services ( < 30 invoices / month) ",
+      "catID": 1,
+      "description": "Posting all incoming / outgoing invoices, cash management",
+      "price": 400,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 14,
+      "name": "Accounting Services ( < 60 invoices / month) ",
+      "catID": 1,
+      "description": "Posting all incoming / outgoing invoices, cash management",
+      "price": 500,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 15,
+      "name": "Accounting Services ( < 100 invoices / month) ",
+      "catID": 1,
+      "description": "Posting all incoming / outgoing invoices, cash management",
+      "price": 600,
+      "UOM": "Month",
+      "active": false
+    },
+    {
+      "id": 16,
+      "name": "Accounting Services ( < 200 invoices / month) ",
+      "catID": 1,
+      "description": "Posting all incoming / outgoing invoices, cash management",
+      "price": 800,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 17,
+      "name": "Accounting Services ( < 300 invoices / month) ",
+      "catID": 1,
+      "description": "Posting all incoming / outgoing invoices, cash management",
+      "price": 1000,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 18,
+      "name": "Accounting Services ( < 500 invoices / month) ",
+      "catID": 1,
+      "description": "Posting all incoming / outgoing invoices, cash management",
+      "price": 1200,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 19,
+      "name": "Accounting Services ( < 1,000 invoices / month) ",
+      "catID": 1,
+      "description": "Posting all incoming / outgoing invoices, cash management",
+      "price": 1500,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 20,
+      "name": "Accounting Services ( < 2,000 invoices / month) ",
+      "catID": 1,
+      "description": "Posting all incoming / outgoing invoices, cash management",
+      "price": 2000,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 21,
+      "name": "Accounting Services ( < 3,000 invoices / month) ",
+      "catID": 1,
+      "description": "Posting all incoming / outgoing invoices, cash management",
+      "price": 2500,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 22,
+      "name": "Accounting Services ( < 5,000 invoices / month) ",
+      "catID": 1,
+      "description": "Posting all incoming / outgoing invoices, cash management",
+      "price": 3000,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 23,
+      "name": "Accounting Services ( < 7,500 invoices / month) ",
+      "catID": 1,
+      "description": "Posting all incoming / outgoing invoices, cash management",
+      "price": 3500,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 24,
+      "name": "Accounting Services ( < 10,000 invoices / month) ",
+      "catID": 1,
+      "description": "Posting all incoming / outgoing invoices, cash management",
+      "price": 4000,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 25,
+      "name": "Accounting Services ( < 20,000 invoices / month) ",
+      "catID": 1,
+      "description": "Posting all incoming / outgoing invoices, cash management",
+      "price": 5000,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 26,
+      "name": "Auditing Services ( Revenue < 30,000 EUR / year) ",
+      "catID": 2,
+      "description": "Compiling & Auditing Year-end report",
+      "price": 400,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 27,
+      "name": "Auditing Services ( Revenue < 50,000 EUR / year) ",
+      "catID": 2,
+      "description": "Compiling & Auditing Year-end report",
+      "price": 600,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 28,
+      "name": "Auditing Services ( Revenue < 100,000 EUR / year) ",
+      "catID": 2,
+      "description": "Compiling & Auditing Year-end report",
+      "price": 800,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 29,
+      "name": "Auditing Services ( Revenue < 150,000 EUR / year) ",
+      "catID": 2,
+      "description": "Compiling & Auditing Year-end report",
+      "price": 1000,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 30,
+      "name": "Auditing Services ( Revenue < 300,000 EUR / year) ",
+      "catID": 2,
+      "description": "Compiling & Auditing Year-end report",
+      "price": 1200,
+      "UOM": "Month",
+      "active": false
+    },
+    {
+      "id": 31,
+      "name": "Auditing Services ( Revenue < 500,000 EUR / year) ",
+      "catID": 2,
+      "description": "Compiling & Auditing Year-end report",
+      "price": 1500,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 32,
+      "name": "Auditing Services ( Revenue < 1,000,000 EUR / year) ",
+      "catID": 2,
+      "description": "Compiling & Auditing Year-end report",
+      "price": 2000,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 33,
+      "name": "Auditing Services ( Revenue < 1,500,000 EUR / year) ",
+      "catID": 2,
+      "description": "Compiling & Auditing Year-end report",
+      "price": 3000,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 34,
+      "name": "Auditing Services ( Revenue < 2,000,000 EUR / year) ",
+      "catID": 2,
+      "description": "Compiling & Auditing Year-end report",
+      "price": 4000,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 35,
+      "name": "Auditing Services ( Revenue < 2,500,000 EUR / year) ",
+      "catID": 2,
+      "description": "Compiling & Auditing Year-end report",
+      "price": 5000,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 36,
+      "name": "Auditing Services ( Revenue < 3,000,000 EUR / year) ",
+      "catID": 2,
+      "description": "Compiling & Auditing Year-end report",
+      "price": 5500,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 37,
+      "name": "Auditing Services ( Revenue < 5,000,000 EUR / year) ",
+      "catID": 2,
+      "description": "Compiling & Auditing Year-end report",
+      "price": 6000,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 38,
+      "name": "Statutory Accounting ( < 20 invoices / month) ",
+      "catID": 7,
+      "description": "Bookkeeping according to Statutory guidelines",
+      "price": 300,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 39,
+      "name": "Statutory Accounting ( < 50 invoices / month) ",
+      "catID": 7,
+      "description": "Bookkeeping according to Statutory guidelines",
+      "price": 450,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 40,
+      "name": "Statutory Accounting ( < 100 invoices / month) ",
+      "catID": 7,
+      "description": "Bookkeeping according to Statutory guidelines",
+      "price": 600,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 41,
+      "name": "Statutory Accounting ( < 150 invoices / month) ",
+      "catID": 7,
+      "description": "Bookkeeping according to Statutory guidelines",
+      "price": 800,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 42,
+      "name": "Statutory Accounting ( < 200 invoices / month) ",
+      "catID": 7,
+      "description": "Bookkeeping according to Statutory guidelines",
+      "price": 1000,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 43,
+      "name": "Statutory Accounting ( < 300 invoices / month) ",
+      "catID": 7,
+      "description": "Bookkeeping according to Statutory guidelines",
+      "price": 1500,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 44,
+      "name": "Statutory Accounting ( < 500 invoices / month) ",
+      "catID": 7,
+      "description": "Bookkeeping according to Statutory guidelines",
+      "price": 2000,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 45,
+      "name": "Statutory Accounting ( < 750 invoices / month) ",
+      "catID": 7,
+      "description": "Bookkeeping according to Statutory guidelines",
+      "price": 2500,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 46,
+      "name": "Statutory Accounting ( < 1,000 invoices / month) ",
+      "catID": 7,
+      "description": "Bookkeeping according to Statutory guidelines",
+      "price": 3000,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 47,
+      "name": "Statutory Accounting ( < 1,500 invoices / month) ",
+      "catID": 7,
+      "description": "Bookkeeping according to Statutory guidelines",
+      "price": 4000,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 48,
+      "name": "Statutory Accounting ( < 3,000 invoices / month) ",
+      "catID": 7,
+      "description": "Bookkeeping according to Statutory guidelines",
+      "price": 5000,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 49,
+      "name": "Statutory Accounting ( < 5,000 invoices / month) ",
+      "catID": 7,
+      "description": "Bookkeeping according to Statutory guidelines",
+      "price": 6500,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 50,
+      "name": "Other services",
+      "catID": 6,
+      "description": "Other non-specified services",
+      "price": 30,
+      "UOM": "Hour",
+      "active": true
+    },
+    {
+      "id": 51,
+      "name": "Foreign Exchange revaluation",
+      "catID": 1,
+      "description": "Calculating FX dif & related financial impact",
+      "price": 100,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 52,
+      "name": "Fixed Asset management",
+      "catID": 1,
+      "description": "Fixed Assets capitalization",
+      "price": 100,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 53,
+      "name": "Fixed Asset management",
+      "catID": 1,
+      "description": "Monthly depreciation & amortization",
+      "price": 100,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 54,
+      "name": "Fixed Asset management",
+      "catID": 1,
+      "description": "Assets under construction",
+      "price": 80,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 55,
+      "name": "Inventory Management",
+      "catID": 1,
+      "description": "Physical stock count",
+      "price": 100,
+      "UOM": "Each",
+      "active": true
+    },
+    {
+      "id": 56,
+      "name": "Inventory Management",
+      "catID": 1,
+      "description": "Inventory revaluation",
+      "price": 80,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 57,
+      "name": "Working Capital",
+      "catID": 1,
+      "description": "Calculating & forecasting working capital",
+      "price": 120,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 58,
+      "name": "Capital Share",
+      "catID": 4,
+      "description": "Financial transactions related to Owners Equity",
+      "price": 1000,
+      "UOM": "Each",
+      "active": true
+    },
+    {
+      "id": 59,
+      "name": "Functional Cost Analysis",
+      "catID": 1,
+      "description": "FUCO analysis & forecast",
+      "price": 120,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 60,
+      "name": "Goods in Transit",
+      "catID": 1,
+      "description": "Calculating & clearing GIT items",
+      "price": 120,
+      "UOM": "Each",
+      "active": true
+    },
+    {
+      "id": 61,
+      "name": "Review of unposted Journals",
+      "catID": 2,
+      "description": "Auditing & substantiating unposted JVs",
+      "price": 120,
+      "UOM": "Each",
+      "active": true
+    },
+    {
+      "id": 62,
+      "name": "Review of other Financial Revenues",
+      "catID": 2,
+      "description": "Auditing revenue related to financial activities",
+      "price": 150,
+      "UOM": "Each",
+      "active": true
+    },
+    {
+      "id": 63,
+      "name": "Review of other Financial Expenses",
+      "catID": 2,
+      "description": "Auditing expenses related to financial activities",
+      "price": 150,
+      "UOM": "Each",
+      "active": true
+    },
+    {
+      "id": 64,
+      "name": "CIT calculation / Statutory",
+      "catID": 7,
+      "description": "Corporate Income Tax according to Statutory guidelines",
+      "price": 400,
+      "UOM": "Year",
+      "active": true
+    },
+    {
+      "id": 65,
+      "name": "VAT calculation / Statutory",
+      "catID": 7,
+      "description": "Value Added Tax according to Statutory guidelines",
+      "price": 120,
+      "UOM": "Month",
+      "active": true
+    },
+    {
+      "id": 66,
+      "name": "Applying for funds / domestic",
+      "catID": 5,
+      "description": "Applying for funds advertised by Hungarian Government",
+      "price": 1000,
+      "UOM": "Each",
+      "active": true
+    },
+    {
+      "id": 67,
+      "name": "Applying for funds / EU",
+      "catID": 5,
+      "description": "Applying for funds advertised by EU Government",
+      "price": 1200,
+      "UOM": "Each",
+      "active": true
+    },
+    {
+      "id": 68,
+      "name": "Human Resource rental",
+      "catID": 6,
+      "description": "Workforce rental / management",
+      "price": 2000,
+      "UOM": "Person / Month",
+      "active": true
+    }
+  ]

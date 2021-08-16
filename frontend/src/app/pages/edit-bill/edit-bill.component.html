@@ -1,0 +1,82 @@
+<div class="row">
+  <div *ngIf="(bill$ | async) as bill" class="col-6 offset-3">
+    <div class="offset-4 m-5">
+      <h1 class="h2 text-center">Invoice details</h1>
+    </div>
+
+    <form #billForm="ngForm" (ngSubmit)="onUpdate(billForm, bill)">
+
+      <div class="form-group">
+        <label for="invoiceNo">Invoice No. <span class="found">(calculated automatically)</span></label>
+        <div class="form-control">Inv-{{calculatedID}}</div>
+      </div>
+      <div class="form-group" hidden>
+        <label for="id">ID</label>
+        <input [(ngModel)]="bill.id" class="form-control" name="id" type="text" readonly>
+      </div>
+
+      <div *ngIf="newItem" class="form-group">
+        <label for="orderID"> Order ID<span *ngIf="!orderFound" class="ml-2 not-found"> Range: {{orderMin}} - {{orderMax}}</span><span *ngIf="orderFound"><span *ngFor="let order of orders$ | async | filter:'id':orderFound" class="ml-2 found"> (Customer ID: {{order.customerID}}, &nbsp;Amount: {{order.amount}})            
+        </span></span></label>
+        <input [(ngModel)]="bill.orderID" class="form-control" name="orderID" type="text" pattern="[0-9]{5}" required (keyup)="searchOrder($event)">
+        <div *ngIf="!orderFound" class="error-message">
+          The Order Id of the order must be a numeric value between {{orderMin}} and {{orderMax}}.
+        </div>
+      </div>
+      <div *ngIf="!newItem" class="form-group">
+        <label for="orderID"> Order ID <span class="found">(calculated automatically)</span></label>
+        <input [(ngModel)]="bill.orderID" class="form-control" name="orderID" type="text" pattern="[0-9]{3,8}" required readonly>
+        <div [hidden]="billForm.controls.orderID?.valid" class="error-message">
+          The order Id of the bill must be a numeric value.
+        </div>
+      </div>
+
+      <div *ngIf="newItem" class="form-group">
+        <label for="amount"> Amount<span *ngIf="orderFound" class="found ml-2">(calculated automatically)</span></label>
+        <input [(ngModel)]="bill.amount" [value]="price" class="form-control" name="amount" type="number" readonly>
+        <div [hidden]="billForm.controls.amount?.valid" class="error-message">
+          The amount of the bill must be a numeric value.
+        </div>
+      </div>
+      <div *ngIf="!newItem" class="form-group">
+        <label for="amount"> Amount <span class="found">(calculated automatically)</span></label>
+        <input [(ngModel)]="bill.amount" class="form-control" name="amount" type="number" pattern="^[1-9]\d*$" required readonly>
+        <div [hidden]="billForm.controls.amount?.valid" class="error-message">
+          The amount of the bill must be a numeric value.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="status"> Status</label><br>
+        <select class="form-select custom-select" name="status" id="status" [(ngModel)]="bill.status"
+          pattern="^(new|issued|paid)$" required>
+          <option value="new">new</option>
+          <option value="issued">issued</option>
+          <option value="paid">paid</option>
+        </select>
+      </div>
+      
+      <div class="btn-group d-flex justify-content-center">
+
+        <button [routerLink]="['/bills/']" type="reset" class="btn btn-secondary cancelBtn ml-5"><span
+            class="material-icons">
+            exit_to_app
+          </span></button>
+
+        <button [disabled]="billForm.invalid || updating" class="btn btn-success mr-5"
+          type="submit">
+          <i *ngIf="!updating" class="fa fa-save"></i>
+          <i *ngIf="updating" class="fa fa-refresh"></i>
+        </button>
+      </div>
+      <!-- teszteleshez -->
+      <!-- <pre>
+          {{bill | json}}
+       </pre> -->
+
+    </form>
+    <div class="btn-group d-flex justify-content-center">
+    <div class="form-group"><button [disabled]="billForm.invalid || updating" (click)="issueInvoice()" class="btn btn-block btn-success">ISSUE INVOICE</button></div>
+    </div>
+  </div>
+</div>

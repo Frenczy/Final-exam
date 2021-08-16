@@ -1,0 +1,35 @@
+[{
+    "id": 1,
+    "name": "Accounting services",
+    "description": "Accounting and Financial related services"
+  },
+  {
+    "id": 2,
+    "name": "Audit services",
+    "description": "Audit and Year-end related services, Annual reports"
+  },
+  {
+    "id": 3,
+    "name": "Tax related services",
+    "description": "Tax calculation, submission, self-revision"
+  },
+  {
+    "id": 4,
+    "name": "Legal services",
+    "description": "Legal advisory & representation at court"
+  },
+  {
+    "id": 5,
+    "name": "Project management",
+    "description": "Applying for domestic & EU funds"
+  },
+  {
+    "id": 6,
+    "name": "Other services",
+    "description": "Other non-specified services, Human Resource rental"
+  },
+  {
+    "id": 7,
+    "name": "Statutory accounting",
+    "description": "Accounting related to Statutory guidelines"
+  }]

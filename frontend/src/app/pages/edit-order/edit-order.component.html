@@ -1,0 +1,98 @@
+<div class="row">
+  <div *ngIf="(order$ | async) as order" class="col-6 offset-3">
+    <div class="offset-4 m-5">
+      <h1 class="h2 text-center">Order details</h1>
+    </div>
+
+    <form #orderForm="ngForm" (ngSubmit)="onUpdate(orderForm, order)">
+
+      <div class="form-group">
+        <label for="orderNo">Order No. (calculated automatically)</label>
+        <div class="form-control">Order-{{calculatedID}}</div>
+      </div>
+      <div class="form-group" hidden>
+        <label for="id">ID</label>
+        <input [(ngModel)]="order.id" class="form-control" name="id" type="text" readonly>
+      </div>
+
+      <div class="form-group">
+        <label for="customerID">* Customer Id <span *ngIf="!customerFound" class="ml-2 not-found"> Range: {{customerMin}} - {{customerMax}}</span><span *ngIf="customerFound"><span *ngFor="let customer of customers$ | async | filter:'id':customerFound" class="ml-2 found"> (Search result: {{customer.firstName}} {{customer.lastName}})            
+        </span></span></label>
+        <input [(ngModel)]="order.customerID" class="form-control" name="customerID" type="number"
+          required (keyup)="searchCustomer($event)">
+        <div *ngIf="!customerFound" class="error-message">
+          The customer Id of the order must be a numeric value between {{customerMin}} and {{customerMax}}.
+        </div>
+        </div>
+      <div class="form-group">
+        <label for="category"> Category</label>
+        <select [(ngModel)]="order.catID" (change)="categoryChange($event.target)" class="form-select custom-select" 
+          type="text" pattern="^((?!--Please select category--).)*$" name="category">
+         <option [value]="0">--Please select category--</option>
+         <option *ngFor="let category of categories$ | async" [value]="category.id">{{category.name}}</option>
+        </select>
+        <div *ngIf="(selectedCategory == 0)" class="error-message">
+          Please select Category from the dropdown list.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="productID"> Service <span *ngIf="productID"><span *ngFor="let product of products$ | async | idFilter:'id':productID" 
+          class="ml-2 found"> (Service price: {{product.price}} /  {{product.UOM}})            
+        </span></span></label>
+        <select [(ngModel)]="order.productID" (change)="serviceChange($event.target)" class="form-select custom-select" name="productID" id="productId" type="text"
+          pattern="^[1-9]\d*$" required>
+         <option [value]="0">--Please select service--</option>
+         <option *ngFor="let product of products$ | async | idFilter:'catID':selectedCategory" 
+          [value]="product.id">{{product.name}}</option>
+        </select>
+        <div [hidden]="orderForm.controls.productID?.valid" class="error-message">
+          Please select Service from the dropdown list.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="quantity"> Quantity</label>
+        <input [(ngModel)]="order.quantity" class="form-control" name="quantity" type="number" pattern="^[1-9]\d*$" required (keyup)="quantityChange($event)" (mouseover)="calculateTotalPrice()">
+        <div [hidden]="orderForm.controls.quantity?.valid" class="error-message">
+          The quantity must be a numeric value.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="amount"> Amount  (automatically calculated based on service price x quantity)</label>
+        <input [(ngModel)]="order.amount" class="form-control" name="amount" type="number"  required  [value]="totalPrice" (mouseover)="calculateTotalPrice()" readonly>
+        <div [hidden]="orderForm.controls.amount?.valid" class="error-message">
+          The amount of the order must be a numeric value.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="status"> Status</label><br>
+        <select class="form-select custom-select" name="status" id="status" [(ngModel)]="order.status"
+          pattern="^(new|ordered|delivered)$" required>
+          <option value="new">new</option>
+          <option value="ordered">ordered</option>
+          <option value="delivered">delivered</option>
+        </select>
+      </div>
+
+      <div class="btn-group d-flex justify-content-center">
+
+        <button [routerLink]="['/orders/']" type="reset" class="btn btn-secondary cancelBtn ml-5"><span
+            class="material-icons">
+            exit_to_app
+          </span></button>
+
+        <button [disabled]="orderForm.invalid || updating"
+          class="btn btn-success mr-5" type="submit">
+          <i *ngIf="!updating" class="fa fa-save"></i>
+          <i *ngIf="updating" class="fa fa-refresh"></i>
+        </button>
+      </div>
+      <!-- teszteleshez -->
+                <!-- <pre>
+          {{order | json}}
+       </pre> -->
+    </form>
+  </div>
+</div>

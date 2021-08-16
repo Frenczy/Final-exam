@@ -1,0 +1,25 @@
+/* .off-canvas-sidebar nav .navbar-collapse {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: #ffffff;
+    display: block;
+    content: "";
+    z-index: 1;
+  }
+
+  .off-canvas-sidebar nav .navbar-collapse::before {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: #ffffff;
+    display: block;
+    content: "";
+    z-index: 1;
+  } */
+a[class="dropdown-item"]:hover{background-color: rgb(246, 246, 246);
+  box-shadow: none;}

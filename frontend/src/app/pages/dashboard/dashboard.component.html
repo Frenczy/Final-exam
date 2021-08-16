@@ -1,0 +1,91 @@
+<div class="row">
+  <div *ngFor="let card of cards" class="col-xl-3 col-md-6 col-sm-6">
+    <app-info-card [cardClass]="card.cardClass" [icon]="card.icon" [title]="card.title" [content]="card.content"
+      [footer]="card.footer" [footericon]="card.footericon" [routerLink]="card.routerLink"></app-info-card>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="col-md-6">
+    <div class="card card-chart">
+      <div class="card-header card-header-warning">
+        <app-chart
+        [barChartLabels]="productChartLabels"
+        [barChartData]="productChartData">
+      </app-chart>
+        <div class="ct-chart" id="completedTasksChart"></div>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title mt-2 mb-0">Number of Services</h4>
+        <p class="card-category"></p>
+      </div>
+      <div class="card-footer">
+        <div>
+          <span class="text-warning pl-1"><i class="material-icons icon pr-1">addchart</i>Accounting services portfolio provided by our company</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card card-chart">
+      <div class="card-header card-header-success">
+        <app-chart
+        [barChartLabels]="customerChartLabels"
+        [barChartData]="customerChartData">
+      </app-chart>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title mt-2 mb-0">Number of Customers</h4>
+        <p class="card-category"></p>
+      </div>
+      <div class="card-footer">
+        <div>
+          <span class="text-success pl-1"><i class="material-icons icon pr-1">account_circle</i>Number of active and inactive Customers</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card card-chart">
+      <div class="card-header card-header-danger">
+      <app-chart
+        [barChartLabels]="orderChartLabels"
+        [barChartData]="orderChartData">
+      </app-chart>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title mt-2 mb-0">Number of Orders</h4>
+        <p class="card-category"></p>
+      </div>
+      <div class="card-footer">
+        <div>
+          <span class="text-danger pl-1"><i class="material-icons icon pr-1">analytics</i>Distribution of Orders by category</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card card-chart">
+      <div class="card-header card-header-info">
+        <app-chart
+        [barChartLabels]="billChartLabels"
+        [barChartData]="billChartData">
+      </app-chart>
+          </div>
+      <div class="card-body">
+        <h4 class="card-title mt-2 mb-0">Sum of Invoices</h4>
+        <p class="card-category"></p>
+      </div>
+      <div class="card-footer">
+        <div>
+          <span class="text-info pl-1"><i class="material-icons icon pr-1">euro_symbol</i>Total amount of invoices by payment status</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
